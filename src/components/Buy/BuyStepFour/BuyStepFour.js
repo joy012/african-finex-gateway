@@ -9,16 +9,18 @@ const BuyStepFour = () => {
     const history = useHistory();
     const handleAddBuy = e => {
         e.preventDefault();
-        const formData = new FormData();
-        formData.append('country', country);
-        formData.append('coinQuantity', quantity);
-        formData.append('wallet', wallet);
-        formData.append('IBAN', iban);
-        formData.append('swapId', uniqid());
+        const data = {
+            country: country,
+            coinQuantity: quantity,
+            wallet: wallet,
+            IBAN: iban,
+            TXid: uniqid()
+        };
 
         fetch('https://african-finex-gateway.herokuapp.com/addBuy', {
             method: 'POST',
-            body: formData
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
         })
             .then(res => res.json())
             .then(result => {

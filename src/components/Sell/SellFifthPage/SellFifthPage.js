@@ -9,16 +9,18 @@ const SellFifthPage = () => {
     const history = useHistory();
     const handleAddSell = e => {
         e.preventDefault();
-        const formData = new FormData();
-        formData.append('country', country);
-        formData.append('coinQuantity', quantity);
-        formData.append('wallet', wallet);
-        formData.append('IBAN', iban);
-        formData.append('TXid', TXid);
+        const data = {
+            country: country,
+            coinQuantity: quantity,
+            wallet: wallet,
+            IBAN: iban,
+            TXid: TXid
+        };
 
         fetch('https://african-finex-gateway.herokuapp.com/addSell', {
             method: 'POST',
-            body: formData
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
         })
             .then(res => res.json())
             .then(result => {
