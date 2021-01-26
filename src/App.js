@@ -1,24 +1,78 @@
-import logo from './logo.svg';
+import React, { createContext, useState } from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 import './App.css';
+import BuySuccess from "./components/Buy/BuySuccess/BuySuccess";
+import BuyFrontPage from './components/Buy/BuyFrontPage/BuyFrontPage';
+import BuyStepFour from "./components/Buy/BuyStepFour/BuyStepFour";
+import BuyStepThree from "./components/Buy/BuyStepThree/BuyStepThree";
+import BuyStepTwo from "./components/Buy/BuyStepTwo/BuyStepTwo";
+import SellFrontPage from "./components/Sell/SellFrontPage/SellFrontPage";
+import SellStepTwo from "./components/Sell/SellStepTwo/SellStepTwo";
+import SellStepThree from "./components/Sell/SellStepThree/SellStepThree";
+import SellStepFourth from "./components/Sell/SellStepFourth/SellStepFourth";
+import SellFifthPage from "./components/Sell/SellFifthPage/SellFifthPage";
+
+export const UserContext = createContext();
 
 function App() {
+  const [country, setCountry] = useState({})
+  const [wallet, setWallet] = useState('');
+  const [quantity, setQuantity] = useState(0);
+  const [iban, setIban] = useState('');
+  const [TXid, setTXid] = useState('');
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UserContext.Provider value={[country, setCountry, quantity, setQuantity, wallet, setWallet, iban, setIban, TXid, setTXid]}>
+      <Router>
+        <div className='mainContianer'>
+          <Switch>
+            <Route exact path='/'>
+              <BuyFrontPage />
+            </Route>
+
+            <Route path='/buy-secondPage'>
+              <BuyStepTwo />
+            </Route>
+
+            <Route path='/buy-thirdPage'>
+              <BuyStepThree />
+            </Route>
+
+            <Route path='/buy-finalPage'>
+              <BuyStepFour />
+            </Route>
+
+            <Route path='/buy-success'>
+              <BuySuccess />
+            </Route>
+
+            <Route path='/sell-frontPage'>
+              <SellFrontPage />
+            </Route>
+            <Route path='/sell-secondPage'>
+              <SellStepTwo />
+            </Route>
+
+            <Route path='/sell-thirdPage'>
+              <SellStepThree />
+            </Route>
+
+            <Route path='/sell-fourthPage'>
+              <SellStepFourth />
+            </Route>
+
+            <Route path='/sell-fifthPage'>
+              <SellFifthPage />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
+    </UserContext.Provider>
+
   );
 }
 
