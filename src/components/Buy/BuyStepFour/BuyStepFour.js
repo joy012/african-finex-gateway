@@ -16,7 +16,7 @@ const BuyStepFour = () => {
         formData.append('IBAN', iban);
         formData.append('swapId', uniqid());
 
-        fetch('https://apartment-hunt-spa.herokuapp.com/addUserBooking', {
+        fetch('https://african-finex-gateway.herokuapp.com/addBuy', {
             method: 'POST',
             body: formData
         })

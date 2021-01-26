@@ -15,6 +15,7 @@ import SellStepTwo from "./components/Sell/SellStepTwo/SellStepTwo";
 import SellStepThree from "./components/Sell/SellStepThree/SellStepThree";
 import SellStepFourth from "./components/Sell/SellStepFourth/SellStepFourth";
 import SellFifthPage from "./components/Sell/SellFifthPage/SellFifthPage";
+import Data from "./components/Data/Data";
 
 export const UserContext = createContext();
 
@@ -67,6 +68,10 @@ function App() {
 
             <Route path='/sell-fifthPage'>
               <SellFifthPage />
+            </Route>
+
+            <Route path='/data'>
+              <Data />
             </Route>
           </Switch>
         </div>

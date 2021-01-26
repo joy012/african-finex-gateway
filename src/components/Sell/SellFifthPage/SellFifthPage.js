@@ -16,7 +16,7 @@ const SellFifthPage = () => {
         formData.append('IBAN', iban);
         formData.append('TXid', TXid);
 
-        fetch('https://apartment-hunt-spa.herokuapp.com/addUserBooking', {
+        fetch('https://african-finex-gateway.herokuapp.com/addSell', {
             method: 'POST',
             body: formData
         })
@@ -24,7 +24,7 @@ const SellFifthPage = () => {
             .then(result => {
                 if (result) {
                     alert('Success!')
-                    history.push('/');
+                    history.push('/data');
                 }
             })
     }
