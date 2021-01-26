@@ -7,16 +7,15 @@ var uniqid = require('uniqid');
 const BuyStepFour = () => {
     const [country, setCoutnry, quantity, setQuantity, wallet, setWallet, iban, setIban] = useContext(UserContext);
     const history = useHistory();
+    const data = {
+        country: country,
+        coinQuantity: quantity,
+        wallet: wallet,
+        IBAN: iban,
+        TXid: uniqid()
+    };
     const handleAddBuy = e => {
         e.preventDefault();
-        const data = {
-            country: country,
-            coinQuantity: quantity,
-            wallet: wallet,
-            IBAN: iban,
-            TXid: uniqid()
-        };
-
         fetch('https://african-finex-gateway.herokuapp.com/addBuy', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
