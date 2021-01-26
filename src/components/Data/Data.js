@@ -27,7 +27,8 @@ const Data = () => {
                             <p>SwapId: {data.swapId}</p>
                             <p>IBAN: {data.IBAN}</p>
                             <p>Wallet: {data.wallet}</p>
-                            <p>Country: {data.Country}</p>
+                            <p>Country: {data.Country.name}</p>
+                            <p>Country: {data.Country.currencies[0].symbol}</p>
                             <p>coinQuantity: {data.coinQuantity}</p>
                         </div>
                     )
@@ -43,7 +44,8 @@ const Data = () => {
                             <p>SwapId: {data.TXid}</p>
                             <p>IBAN: {data.IBAN}</p>
                             <p>Wallet: {data.wallet}</p>
-                            <p>Country: {data.Country}</p>
+                            <p>Country: {data.Country.name}</p>
+                            <p>Country: {data.Country.currencies[0].symbol}</p>
                             <p>coinQuantity: {data.coinQuantity}</p>
                         </div>
                     )
