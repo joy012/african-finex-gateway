@@ -6,16 +6,18 @@ import {
 } from "react-router-dom";
 import './App.css';
 import BuySuccess from "./components/Buy/BuySuccess/BuySuccess";
-import BuyFrontPage from './components/Buy/BuyFrontPage/BuyFrontPage';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import BuyStepFour from "./components/Buy/BuyStepFour/BuyStepFour";
 import BuyStepThree from "./components/Buy/BuyStepThree/BuyStepThree";
 import BuyStepTwo from "./components/Buy/BuyStepTwo/BuyStepTwo";
-import SellFrontPage from "./components/Sell/SellFrontPage/SellFrontPage";
 import SellStepTwo from "./components/Sell/SellStepTwo/SellStepTwo";
 import SellStepThree from "./components/Sell/SellStepThree/SellStepThree";
 import SellStepFourth from "./components/Sell/SellStepFourth/SellStepFourth";
 import SellFifthPage from "./components/Sell/SellFifthPage/SellFifthPage";
 import Data from "./components/Data/Data";
+import Home from "./components/Home/Home";
+import LogInForm from "./components/LogInForm/LogInForm";
+import DashBoard from "./components/DashBoard/DashBoard";
 
 export const UserContext = createContext();
 
@@ -25,56 +27,46 @@ function App() {
   const [quantity, setQuantity] = useState(0);
   const [iban, setIban] = useState('');
   const [TXid, setTXid] = useState('');
+  const [loggedInUser, setLoggedInUser] = useState({});
+  const [user, setUser] = useState({
+    isSignedIn: false,
+    firstName: '',
+    lastName: '',
+    name: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+    success: false,
+    error: '',
+    newUser: false
+  })
+
+  if (user.firstName && user.lastName) {
+    user.name = user.firstName + ' ' + user.lastName;
+  }
+
+  if (loggedInUser.name) {
+    sessionStorage.setItem('name', loggedInUser.name);
+  }
+
 
   return (
-    <UserContext.Provider value={[country, setCountry, quantity, setQuantity, wallet, setWallet, iban, setIban, TXid, setTXid]}>
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser, user, setUser, country, setCountry, quantity, setQuantity, wallet, setWallet, iban, setIban, TXid, setTXid]}>
       <Router>
-        <div className='mainContianer'>
-          <Switch>
-            <Route exact path='/'>
-              <BuyFrontPage />
-            </Route>
+        <Switch>
+          <Route exact path='/'>
+            <Home />
+          </Route>
 
-            <Route path='/buy-secondPage'>
-              <BuyStepTwo />
-            </Route>
+          <Route path='/login'>
+            <LogInForm />
+          </Route>
 
-            <Route path='/buy-thirdPage'>
-              <BuyStepThree />
-            </Route>
+          <PrivateRoute path='/dashboard'>
+            <DashBoard />
+          </PrivateRoute>
 
-            <Route path='/buy-finalPage'>
-              <BuyStepFour />
-            </Route>
-
-            <Route path='/buy-success'>
-              <BuySuccess />
-            </Route>
-
-            <Route path='/sell-frontPage'>
-              <SellFrontPage />
-            </Route>
-            <Route path='/sell-secondPage'>
-              <SellStepTwo />
-            </Route>
-
-            <Route path='/sell-thirdPage'>
-              <SellStepThree />
-            </Route>
-
-            <Route path='/sell-fourthPage'>
-              <SellStepFourth />
-            </Route>
-
-            <Route path='/sell-fifthPage'>
-              <SellFifthPage />
-            </Route>
-
-            <Route path='/data'>
-              <Data />
-            </Route>
-          </Switch>
-        </div>
+        </Switch>
       </Router>
     </UserContext.Provider>
 

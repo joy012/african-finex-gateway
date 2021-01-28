@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { UserContext } from '../../../App';
 
 const SellFrontPage = () => {
-    const [country,setCountry, quantity,setQuantity] = useContext(UserContext)
+    const [, , , , ,setCountry, ,setQuantity] = useContext(UserContext)
     const [countryDetail, setCountryDetail] = useState([]);
 
     useEffect(() => {
@@ -22,7 +22,7 @@ const SellFrontPage = () => {
         setQuantity(event.target.value);
     }
     return (
-        <div className='pageBox'>
+        <div className='service-card w-75 d-bolck mx-auto p-5'>
             <h3 className='mb-5 mt-3'>Stablecoin gateway - Sell</h3>
             <select onChange={handleCountry} className="form-control w-50 my-4">
                 <option>Select Your Coin</option>
@@ -34,8 +34,8 @@ const SellFrontPage = () => {
             </select>
             <input onBlur={handleQuantity} className='form-control my-3 w-25' type="number" placeholder='Quantity' />
             <h5 className='mt-5 pt-5'>You Will Get X AOA @preco TAOA/AOA</h5>
-            <Link to='/sell-secondPage'>
-                <input className='nextBtn' type="submit" value='Sell Now' />
+            <Link to='/dashboard/sell-secondPage'>
+                <input className='btn px-5 d-block mx-auto my-5' type="submit" value='Sell Now' />
             </Link>
         </div>
     )

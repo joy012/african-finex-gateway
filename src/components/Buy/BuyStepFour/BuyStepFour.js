@@ -5,7 +5,7 @@ var uniqid = require('uniqid');
 
 
 const BuyStepFour = () => {
-    const [country, setCoutnry, quantity, setQuantity, wallet, setWallet, iban, setIban] = useContext(UserContext);
+    const [, ,,,country,, quantity,, wallet,, iban] = useContext(UserContext);
     const history = useHistory();
     const data = {
         country: country,
@@ -24,12 +24,12 @@ const BuyStepFour = () => {
             .then(res => res.json())
             .then(result => {
                 if (result) {
-                    history.push('/buy-success');
+                    history.push('/dashboard/buy-success');
                 }
             })
     }
     return (
-        <div className='pageBox'>
+        <div className='service-card w-75 d-bolck mx-auto p-5'>
             <h5 className='mb-5 mt-3'>Step 4/4</h5>
 
             <h6 className='my-4'>Transfer funds to the following account</h6>
@@ -41,7 +41,7 @@ const BuyStepFour = () => {
             <h5 className='mt-3'>{wallet ? `${wallet}` : 'wallet address'}</h5>
 
             <Link><p className='text-center mt-2 pt-3'>Doubts? Dsicord or Telegram</p></Link>
-                <input onClick={handleAddBuy} className='btn mt-5' type="submit" value='Next' />
+                <input onClick={handleAddBuy} className='btn px-5 d-block mx-auto my-5' type="submit" value='Next' />
         </div>
     );
 };

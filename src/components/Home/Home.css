@@ -1,0 +1,81 @@
+.nav-link{
+    margin: 0 0.3rem!important;
+    color: black!important;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+.nav-link:hover{
+    background-color: white;
+    border-radius: 24px;
+    padding: 0.5rem 0.8rem!important;
+}
+.logo{
+    width: 10%;
+}
+.header{
+    -webkit-clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 25%, 75% 0);
+    clip-path: polygon(0 0, 0 100%, 100% 84%, 100% 0%, 0% 0);
+    background: linear-gradient(45deg, #94ef37, #5fc358);
+}
+.card{
+    border: none!important;
+}
+#service{
+    background-color: #ebf3fd;
+}
+.card-bg{
+    background: #ebf3fd;
+}
+.service-card{
+    box-shadow: -6px -6px 20px rgba(255,255,255,1), 6px 6px 20px rgba(0,0,0,0.1);
+    border-radius: 25%;
+    height:100%!important;
+    text-align: center!important;
+}
+.service-logo{
+    width: 30%!important;
+}
+
+.service-card:hover {
+    border: none;
+    background: #ebf3fd;
+    box-shadow: inset -6px -6px 10px rgba(255,255,255,0.5), inset 6px 6px 10px rgba(0,0,0,0.1);
+    color:black;
+    cursor: pointer;
+}
+
+
+
+
+
+@media screen and (max-width:991px){
+    .service-logo{
+        width: 40%!important;
+    }
+}
+@media screen and (max-width:767px){
+    .service-logo{
+        width: 45%!important;
+    }
+}
+@media screen and (max-width:575px){
+    .service-logo{
+        width: 50%!important;
+    }
+    .service-card h4{
+        font-size: 1.3rem;
+    }
+}
+@media screen and (max-width:400px){
+    .service-logo{
+        width: 50%!important;
+    }
+}
+
+@media screen and (max-width:767px){
+    .header{
+        -webkit-clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 25%, 75% 0);
+        clip-path: polygon(0 0, 0 100%, 100% 92%, 100% 0%, 0% 0);
+        background: linear-gradient(45deg, #94ef37, #5fc358);
+    }
+}
