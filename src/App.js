@@ -46,7 +46,10 @@ function App() {
   }
 
   if (loggedInUser.name) {
-    sessionStorage.setItem('name', loggedInUser.name);
+    sessionStorage.setItem('name', JSON.stringify(loggedInUser.name));
+  }
+  if (loggedInUser.email) {
+    sessionStorage.setItem('email', JSON.stringify(loggedInUser.email));
   }
 
 
