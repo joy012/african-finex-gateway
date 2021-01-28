@@ -17,20 +17,23 @@ import SellStepFourth from '../Sell/SellStepFourth/SellStepFourth';
 import SellFifthPage from '../Sell/SellFifthPage/SellFifthPage';
 
 const DashBoard = () => {
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const name = JSON.parse(sessionStorage.getItem('name'));
     const location = useLocation();
+
 
     return (
         <div className='container px-0 mx-auto'>
             <div className='row mt-3 align-items-center justify-content-around my-0 my-sm-4'>
                 <div className="col-4 px-4">
-                    <img src={logo} className="d-block w-50 mx-auto mx-sm-0" alt="" />
+                    <Link to='/'>
+                        <img src={logo} className="d-block w-25 mx-auto mx-sm-0" alt="" />
+                    </Link>
                 </div>
                 <div className='col-4 mx-auto mx-sm-0 text-center text-sm-left'>
                     <h4 className="text-center">DashBoard</h4>
                 </div>
                 <div className='col-4 mx-auto mx-sm-0 text-center text-sm-left'>
-                    <h5 className="text-right">{loggedInUser.name}</h5>
+                    <h5 className="text-right">{name}</h5>
                 </div>
             </div>
 
@@ -52,21 +55,21 @@ const DashBoard = () => {
                         location.pathname === '/dashboard/buy' &&
                         <BuyFrontPage />
                     }
-                     {
+                    {
                         location.pathname === '/dashboard/buy-secondPage' &&
-                        <BuyStepTwo/>
-                    }
-                     {
-                        location.pathname === '/dashboard/buy-thirdPage' &&
-                        <BuyStepThree/>
-                    }
-                     {
-                        location.pathname === '/dashboard/buy-finalPage' &&
-                        <BuyStepFour/>
+                        <BuyStepTwo />
                     }
                     {
-                        location.pathname === '/dashboard/buy-succedd' &&
-                        <BuySuccess/>
+                        location.pathname === '/dashboard/buy-thirdPage' &&
+                        <BuyStepThree />
+                    }
+                    {
+                        location.pathname === '/dashboard/buy-finalPage' &&
+                        <BuyStepFour />
+                    }
+                    {
+                        location.pathname === '/dashboard/buy-success' &&
+                        <BuySuccess />
                     }
 
                     {
@@ -75,19 +78,19 @@ const DashBoard = () => {
                     }
                     {
                         location.pathname === '/dashboard/sell-secondPage' &&
-                        <SellStepTwo/>
+                        <SellStepTwo />
                     }
                     {
                         location.pathname === '/dashboard/sell-thirdPage' &&
-                        <SellStepThree/>
+                        <SellStepThree />
                     }
                     {
                         location.pathname === '/dashboard/sell-fourthPage' &&
-                        <SellStepFourth/>
+                        <SellStepFourth />
                     }
                     {
                         location.pathname === '/dashboard/sell-fifthPage' &&
-                        <SellFifthPage/>
+                        <SellFifthPage />
                     }
                 </div>
             </div>

@@ -32,12 +32,12 @@ const Data = () => {
     return (
         <>
             <div className='container'>
-                <h2 className='center my-5'>Buy History:</h2>
+                <h2 className='text-center my-5'>Buy History:</h2>
                 <div class="row justify-content-center align-items-center">
                     {
                         buy.map((data, index) =>
 
-                        <div class="col-md-4 col-lg-3 col-6">
+                        <div key={index + 1} class="col-md-4 col-lg-3 col-6">
                         <div class="card" style={{ width: '18rem' }}>
                             <div class="card-header">
                                 Buy: {index + 1}
@@ -58,12 +58,12 @@ const Data = () => {
                 </div>
 
 
-                <h2 className='center my-5'>Sell History:</h2>
+                <h2 className='text-center my-5'>Sell History:</h2>
                 <div class="row justify-content-center align-items-center">
                     {
                         sell.map((data, index) =>
 
-                        <div class="col-md-4 col-lg-3 col-6 ">
+                        <div key={index +1} class="col-md-4 col-lg-3 col-6 ">
                         <div class="card" style={{ width: '18rem' }}>
                             <div class="card-header">
                                 Buy: {index + 1}

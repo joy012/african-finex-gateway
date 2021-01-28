@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 body{
   box-sizing: border-box;
 }
@@ -20,14 +23,7 @@ body{
   border: 3px solid black!important;
   color: black!important;
 }
-.nextBtn{
-  width: 100%;
-  margin-top: 4rem;
-  background-color: #f3c0c0;
-  font-weight: bold;
-  border: 2px solid brown!important;
-  box-shadow: 4px 4px brown;
-}
+
 .btn{
   font-size: 1.1rem;
   background: linear-gradient(135deg, #09C6F9 0%, #045DE9 100%);

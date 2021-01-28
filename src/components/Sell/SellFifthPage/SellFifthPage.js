@@ -12,7 +12,8 @@ const SellFifthPage = () => {
         coinQuantity: quantity,
         wallet: wallet,
         IBAN: iban,
-        TXid: TXid
+        TXid: TXid,
+        email: JSON.parse(sessionStorage.getItem('email'))
     };
     const handleAddSell = e => {
         e.preventDefault();
@@ -25,7 +26,7 @@ const SellFifthPage = () => {
             .then(result => {
                 if (result) {
                     alert('Success!')
-                    history.push('/dashboard');
+                    history.push('/');
                 }
             })
     }

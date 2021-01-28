@@ -12,7 +12,8 @@ const BuyStepFour = () => {
         coinQuantity: quantity,
         wallet: wallet,
         IBAN: iban,
-        TXid: uniqid()
+        TXid: uniqid(),
+        email: JSON.parse(sessionStorage.getItem('email'))
     };
     const handleAddBuy = e => {
         e.preventDefault();
@@ -34,7 +35,7 @@ const BuyStepFour = () => {
 
             <h6 className='my-4'>Transfer funds to the following account</h6>
 
-            <h5>IBAN: </h5>
+            <h5>IBAN: 012 0125 332 0123</h5>
             <h5>Swap ID: {uniqid()}</h5>
 
             <h6 className='mt-4'>As soon as the funds are received, the transaction of your BSC Wallet will be made the following address:</h6>

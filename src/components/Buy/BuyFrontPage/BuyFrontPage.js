@@ -25,7 +25,7 @@ const BuyFrontPage = () => {
     return (
         <div className='service-card w-75 d-bolck mx-auto p-5'>
             <h3 className='mb-5 mt-3'>Stablecoin gateway - BUY</h3>
-            <select onChange={handleCountry} className="form-control w-50 my-4">
+            <select onChange={handleCountry} className="form-control d-block mx-auto w-75 my-4">
                 <option>Select Your Coin</option>
                 {
                     countryDetail.map(country =>
@@ -33,7 +33,7 @@ const BuyFrontPage = () => {
                     )
                 }
             </select>
-            <input onBlur={handleQuantity} className='form-control my-3 w-25' type="number" placeholder='Quantity' />
+            <input onBlur={handleQuantity} className='form-control my-3 d-block mx-auto w-50' type="number" placeholder='Quantity' />
             <h5 className='mt-5 pt-5'>Total cost @price AOA/TAOA</h5>
             <Link to='/dashboard/buy-secondPage'>
                 <input className='btn px-5 d-block mx-auto my-5' type="submit" value='Next' />

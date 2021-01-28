@@ -10,7 +10,7 @@ const BuyStepThree = () => {
     return (
         <div className='service-card w-75 d-bolck mx-auto p-5'>
             <h5 className='mb-5 mt-3'>Step 3/4</h5>
-            <select onChange={handleChange} className="form-control w-50 my-4">
+            <select onChange={handleChange} className="form-control w-50 d-block mx-auto my-4">
                 <option>Choose A Local Bank</option>
                 <option>Aegis Bancorp</option>
                 <option>Emblem Financial Inc.</option>
