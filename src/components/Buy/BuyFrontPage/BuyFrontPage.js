@@ -4,7 +4,7 @@ import {UserContext} from '../../../App';
 
 
 const BuyFrontPage = () => {
-    const [, , , , ,setCountry, ,setQuantity] = useContext(UserContext)
+    const [, , , , country,setCountry, quantity,setQuantity] = useContext(UserContext)
     const [countryDetail, setCountryDetail] = useState([]);
 
     useEffect(() => {
@@ -34,7 +34,8 @@ const BuyFrontPage = () => {
                 }
             </select>
             <input onBlur={handleQuantity} className='form-control my-3 d-block mx-auto w-50' type="number" placeholder='Quantity' />
-            <h5 className='mt-5 pt-5'>Total cost @price AOA/TAOA</h5>
+            <h5 className='my-5 text-danger'>Total cost {quantity? `${quantity}`: 'price'} {country.name? `${country.currencies[0].code}/T${country.currencies[0].code}`: 'AOA/TAOA'}</h5>
+            <h5 className='my-4 text-success'>You Will Recieve {quantity? `${quantity - (quantity*0.01)}`: 'price'} {country.name? `T${country.currencies[0].code}/${country.currencies[0].code}`: 'AOA/TAOA'}</h5>
             <Link to='/dashboard/buy-secondPage'>
                 <input className='btn px-5 d-block mx-auto my-5' type="submit" value='Next' />
             </Link>

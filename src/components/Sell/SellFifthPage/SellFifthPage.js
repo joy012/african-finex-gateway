@@ -5,7 +5,6 @@ import { UserContext } from '../../../App';
 
 const SellFifthPage = () => {
     const [, , , ,country, , quantity, , wallet, , iban, , TXid] = useContext(UserContext);
-
     const history = useHistory();
     const data = {
         country: country,
@@ -38,7 +37,9 @@ const SellFifthPage = () => {
 
             <h4 className='my-5'>{TXid}</h4>
 
-            <h5>ID X, qtt token, token, timestamp</h5>
+            <h5 className='word-wrap'>IBAN:{iban}</h5> 
+            <h5 className='word-wrap'>My Wallet: {wallet}</h5>
+            <h5>TimeStamp:</h5>
             <input onClick={handleAddSell} className='btn px-5 d-block mx-auto my-5' type="submit" value="I've stored the ID and I'm done" />
         </div>
     );

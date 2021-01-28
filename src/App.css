@@ -35,3 +35,6 @@ body{
   background: linear-gradient(135deg, #04a5f5 0%, #29f39a 100%);
   text-decoration: none!important;
 }
+.word-wrap{
+  word-wrap: break-word;
+}
