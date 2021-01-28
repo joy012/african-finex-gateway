@@ -7,7 +7,8 @@ import clientLogo5 from '../../image/uber.png'
 
 const Client = () => {
     return (
-        <div className='container-fluid'>
+        <div className='container-fluid py-4'>
+            <h1 className='text-center display-4 my-4'>Our Clients</h1>
             <div className="row align-items-center justify-content-center py-5">
                 <div className="col-4 col-md-offset-1 mt-3 mt-md-0">
                     <img className='w-50 d-block mx-auto' src={clientLogo1} alt=""/>
