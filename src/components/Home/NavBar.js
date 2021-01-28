@@ -12,8 +12,8 @@ const NavBar = () => {
     return (
         <div className="container">
             <nav className="navbar navbar-expand-lg navbar-light pt-0">
-                <Link to='/'>
-                    <img className={`logo d-block ${isLocation ? 'mx-auto' : 'mr-auto'}`} src={logo} alt="" />
+                <Link className='w-50' to='/'>     
+                        <img className={`logo d-block ${isLocation ? 'mx-auto' : 'mr-auto'}`} src={logo} alt="" />
                 </Link>
                 {
                     !isLocation &&

@@ -5,7 +5,7 @@ import googleLogo from '../../image/google2.png';
 import { useContext } from 'react';
 import { useState } from 'react';
 import { Link, useHistory, useLocation } from 'react-router-dom';
-import { createUserWithEmailAndPassword, handleFbSignIn, handleGoogleSignIn, initializeLogInFrameWork, resetPassword, signInWithEmailAndPassword, storeAuthToken } from './loginManager';
+import { createUserWithEmailAndPassword, handleFbSignIn, handleGoogleSignIn, initializeLogInFrameWork, resetPassword, signInWithEmailAndPassword } from './loginManager';
 import { UserContext } from '../../App';
 import NavBar from '../Home/NavBar';
 
@@ -21,7 +21,6 @@ const LogInForm = () => {
     const handleResponse = (response) => {
         setUser(response);
         setLoggedInUser(response);
-        storeAuthToken();
         !user.error && history.replace(from);
     }
     const googleSignIn = () => {
