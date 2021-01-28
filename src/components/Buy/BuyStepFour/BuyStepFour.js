@@ -12,7 +12,7 @@ const BuyStepFour = () => {
         coinQuantity: quantity,
         wallet: wallet,
         IBAN: iban,
-        TXid: uniqid(),
+        swapId: uniqid(),
         email: JSON.parse(sessionStorage.getItem('email'))
     };
     const handleAddBuy = e => {
