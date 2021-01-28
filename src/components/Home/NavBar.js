@@ -12,7 +12,7 @@ const NavBar = () => {
     return (
         <div className="container">
             <nav className="navbar navbar-expand-lg navbar-light pt-0">
-                <Link className='w-50' to='/'>     
+                <Link className='w-50 d-block mx-auto' to='/'>     
                         <img className={`logo d-block ${isLocation ? 'mx-auto' : 'mr-auto'}`} src={logo} alt="" />
                 </Link>
                 {
@@ -28,8 +28,8 @@ const NavBar = () => {
                                 <Link className="nav-link" to="#contact">Contact</Link>
                                 <Link className="nav-link" to="/dashboard">Shop</Link>
                                 {
-                                    (user.email && user.name) ?
-                                        <Link to="/dashboard" className="nav-link">{user.name}</Link>
+                                    JSON.parse(sessionStorage.getItem('name')) ?
+                                        <Link to="/dashboard" className="nav-link">{ JSON.parse(sessionStorage.getItem('name'))}</Link>
                                         :
                                         <>
                                             <Link className="btn px-4 rounded-pill mt-2 mt-lg-0 mr-lg-2 mx-auto" to="/login">LogIn</Link>

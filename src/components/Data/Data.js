@@ -37,14 +37,14 @@ const Data = () => {
                     {
                         buy.map((data, index) =>
 
-                        <div key={index + 1} class="col-md-4 col-lg-3 col-6">
-                        <div class="card" style={{ width: '18rem' }}>
-                            <div class="card-header">
+                        <div key={index + 1} class="col-md-6 col-lg-4 col-6 my-4">
+                        <div class={`card ${index%2 ? 'bg-success' : 'bg-primary'}`}>
+                            <div class="card-title font-weight-bold text-center">
                                 Buy: {index + 1}
                             </div>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">Swap ID: {data.swapId}</li>
-                                <li class="list-group-item">IBAN: {data.IBAN}</li>
+                                <li class="list-group-item">BANK: {data.IBAN}</li>
                                 <li class="list-group-item">Wallet: {data.wallet}</li>
                                 <li class="list-group-item">Country: {data.country.name}</li>
                                 <li class="list-group-item">Currency: {data.country.currencies[0].code}</li>
@@ -59,14 +59,14 @@ const Data = () => {
 
 
                 <h2 className='text-center my-5'>Sell History:</h2>
-                <div class="row justify-content-center align-items-center">
+                <div class="row align-items-center">
                     {
                         sell.map((data, index) =>
 
-                        <div key={index +1} class="col-md-4 col-lg-3 col-6 ">
-                        <div class="card" style={{ width: '18rem' }}>
-                            <div class="card-header">
-                                Buy: {index + 1}
+                        <div key={index +1} class="col-md-6 col-lg-4 col-6 my-4">
+                        <div class={`card ${index%2 ? 'bg-success' : 'bg-primary'}`}>
+                            <div class="card-title font-weight-bold text-center">
+                                Sell: {index + 1}
                             </div>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">TXID: {data.TXid}</li>

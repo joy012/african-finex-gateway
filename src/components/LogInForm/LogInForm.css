@@ -40,9 +40,12 @@
     color: blue;
 }
 .submit-btn{
-    background-color: #F9A51A!important;
+    background: linear-gradient(135deg, #09C6F9 0%, #045DE9 100%);
     color: #000000!important;
     border: none!important;
+}
+.submit-btn:hover{
+    background: linear-gradient(135deg, #04a5f5 0%, #29f39a 100%);
 }
 .social-login{
     border: 1px solid #C7C7C7;

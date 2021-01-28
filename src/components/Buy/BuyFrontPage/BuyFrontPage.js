@@ -15,7 +15,7 @@ const BuyFrontPage = () => {
 
     const handleCountry = event => {
         setCountry(
-            countryDetail.find(country => country.currencies[0].code === event.target.value.split(' ')[1])
+            countryDetail.find(country => country.currencies[0].code === event.target.value.split('/')[0])
         )
     }
 
@@ -29,7 +29,7 @@ const BuyFrontPage = () => {
                 <option>Select Your Coin</option>
                 {
                     countryDetail.map(country =>
-                        <option key={country.alpha2Code}>{country.currencies[0].symbol} {country.currencies[0].code}</option>
+                        <option key={country.alpha2Code}>{country.currencies[0].code}/T{country.currencies[0].code}</option>
                     )
                 }
             </select>

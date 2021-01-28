@@ -2,11 +2,13 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../../App';
 
+
 const BuyStepThree = () => {
     const [, , , ,country, , , , , , , setIban] = useContext(UserContext);
     const handleChange = event => {
-        setIban(`${country.alpha2Code}98${country.alpha3Code}${country.population}`);
+        setIban(event.target.value);
     }
+    console.log(country)
     return (
         <div className='service-card w-75 d-bolck mx-auto p-5'>
             <h5 className='mb-5 mt-3'>Step 3/4</h5>
