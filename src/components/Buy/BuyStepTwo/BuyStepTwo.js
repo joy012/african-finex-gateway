@@ -3,20 +3,9 @@ import { Link } from 'react-router-dom';
 import { UserContext } from '../../../App';
 
 const BuyStepTwo = () => {
-    const [, , , , , setWallet] = useContext(UserContext);
-    // const isAddress = address => {
-    //     if (!/^(0x)?[0-9a-f]{40}$/i.test(address)) {
-    //         return false;
-    //     }
-    //     else if (/^(0x)?[0-9a-f]{40}$/.test(address) || /^(0x)?[0-9A-F]{40}$/.test(address)) {
-    //         return true;
-    //     }
-    // };
+    const [country, , quantity, , , setWallet] = useContext(UserContext);
 
     const validateWallet = event => {
-        // if (isAddress(event.target.value)) {
-        //     setWallet(event.target.value);
-        // }
         if (/^[13][a-km-zA-HJ-NP-Z1-9]{25,34}$/.test(event.target.value)) {
            setWallet(event.target.value);
         }
@@ -27,11 +16,13 @@ const BuyStepTwo = () => {
     }
 
     return (
-        <div className='service-card w-75 d-bolck mx-auto p-5'>
+        <div className='service-card w-75 d-bolck mx-auto p-md-5 p-3'>
             <h5 className='mb-5 mt-3'>Step 2/4</h5>
             <input onBlur={validateWallet} type="text" className='form-control w-100' placeholder='Enter your BSC Wallet address' />
-            <h6 className='my-4'>You will receive your TAOA in this address</h6>
-            <h6 className='text-danger my-5'>Pay close attention. Mistakes will cause you loose all your assets and there is nothing we can do to help</h6>
+            <h5 className='my-5'>You will receive your 
+            <span className='h3 text-success'> {quantity} T{country.currencies[0].code} </span>
+             in this address</h5>
+            <h5 className='text-danger my-4'>Pay close attention. Mistakes will cause you loose all your assets and there is nothing we can do to help</h5>
 
             <Link><p className='text-center my-2'>Don't have a BSC Wallet yet?</p></Link>
             <Link to='/buy-thirdPage'>

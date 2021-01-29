@@ -15,10 +15,10 @@ const SellStepTwo = () => {
     }
 
     return (
-        <div className='service-card w-75 d-bolck mx-auto p-5'>
+        <div className='service-card w-75 d-bolck mx-auto p-md-5 p-3'>
             <h5 className='mb-5 mt-3'>Step 2/5</h5>
             <input onBlur={validateWallet} type="text" className='form-control w-100' placeholder='Enter your BSC Wallet address'/>
-            <h6 className='my-5'>If for some reason we cannot proceed with your sale (which is rare) we will completely return your assets. Please provide a BSC valid Wallet address that you have access to. Pay close attention to not put any incorrect information.</h6>
+            <h5 className='my-5'>If for some reason we cannot proceed with your sale (which is rare) we will completely return your assets. Please provide a BSC valid Wallet address that you have access to. Pay close attention to not put any incorrect information.</h5>
           
           <Link><p className='text-center my-2'>Don't have a BSC Wallet yet?</p></Link>
             <Link to='/sell-thirdPage'>

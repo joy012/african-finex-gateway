@@ -4,15 +4,16 @@ import { UserContext } from '../../../App';
 
 
 const SellFifthPage = () => {
-    const [country, , quantity, , wallet, , iban, , TXid] = useContext(UserContext);
+    const [country, setCountry, quantity, setQuantity, wallet, setWallet, iban, setIban, TXid, setTXid] = useContext(UserContext);
     const history = useHistory();
+    const time = new Date().toLocaleString();
     const data = {
         country: country,
         coinQuantity: quantity,
         wallet: wallet,
         IBAN: iban,
         TXid: TXid,
-        email: JSON.parse(sessionStorage.getItem('email'))
+        timestamp:time
     };
     const handleAddSell = e => {
         e.preventDefault();
@@ -28,19 +29,25 @@ const SellFifthPage = () => {
                     history.push('/');
                 }
             })
+        setCountry({});
+        setQuantity(0);
+        setWallet('');
+        setIban('');
+        setTXid('');
+        history.push('/');
     }
 
     return (
-        <div className='service-card w-75 d-bolck mx-auto p-5'>
+        <div className='service-card w-75 d-bolck mx-auto p-md-5 p-3'>
             <h5 className='mb-5 mt-3'>Step 5/5</h5>
-            <h6 className='my-5'>Congratulations! You have made it successfully. Remember your internal Transaction ID. If you need any help, customer support will ask for it.</h6>
+            <h5 className='my-5'><span className='text-success h3'>Congratulations!</span> You have made it successfully. Remember your internal Transaction ID. If you need any help, customer support will ask for it.</h5>
 
-            <h4 className='my-5'>{TXid}</h4>
-
-            <h5 className='word-wrap'>IBAN:{iban}</h5> 
-            <h5 className='word-wrap'>My Wallet: {wallet}</h5>
-            <h5>TimeStamp:</h5>
-            <input onClick={handleAddSell} className='btn px-5 d-block mx-auto my-5' type="submit" value="I've stored the ID and I'm done" />
+            <h5 className='text-left w-75 mx-auto word-wrap'><span className='text-success'>Internal TXid:</span> {TXid}</h5>
+            <h5 className='text-left w-75 mx-auto word-wrap'><span className='text-success'>IBAN:</span> {iban}</h5>
+            <h5 className='text-left w-75 mx-auto word-wrap'><span className='text-success'>My Wallet:</span> {wallet}</h5>
+            <h5 className='text-left w-75 mx-auto word-wrap'><span className='text-success'>Coin:</span> {quantity} {country.currencies[0].code}</h5>
+            <h5 className='text-left w-75 mx-auto word-wrap'><span className='text-success'>TimeStamp:</span> {time}</h5>
+                <button onClick={handleAddSell} className='btn px-5 d-block mx-auto my-5'>I've stored the ID and I'm done</button>
         </div>
     );
 };
