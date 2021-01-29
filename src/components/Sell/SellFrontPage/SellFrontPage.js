@@ -21,7 +21,7 @@ const SellFrontPage = () => {
     const handleQuantity = event => {
         const amount = event.target.value;
         if (amount >= 0) {
-            setQuantity(amount - (amount * 0.01));
+            setQuantity((amount - (amount * 0.01)).toFixed(2));
         }
         else {
             alert('Invalid Coin Value');
@@ -43,7 +43,7 @@ const SellFrontPage = () => {
             <h5 className='mt-5 pt-5'>You Will Get 
             <span className='h3 text-success'> {quantity ? `${quantity}` : ''} {country.name ? `${country.currencies[0].code}` : ''} </span> 
             from 
-            <span className='h3 my-3 text-danger'> {quantity ? `${quantity / 0.99}` : ''} {country.name ? `T${country.currencies[0].code}` : ''}</span>
+            <span className='h3 my-3 text-danger'> {quantity ? `${(quantity / 0.99).toFixed(2)}` : ''} {country.name ? `T${country.currencies[0].code}` : ''}</span>
             </h5>
 
             <small className='text-danger font-weight-bold'>1% cost deduct for Transaction</small>

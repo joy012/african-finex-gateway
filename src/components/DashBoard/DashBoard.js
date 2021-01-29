@@ -41,9 +41,9 @@ const DashBoard = () => {
                 <div className="row">
                     <div className="col-sm-2">
                         <nav className="nav flex-column align-items-center my-5 ml-auto">
-                            <Link to='/' className="mt-4 text-dark side-link"><i class="fas fa-shopping-cart"></i> History</Link>
-                            <Link to='/buy' className="my-4 text-dark"><i class="fas fa-suitcase"></i> Buy Coin</Link>
-                            <Link to='/sell' className="mb-4 text-dark"><i class="fas fa-comment-alt"></i> Sell Coin</Link>
+                            <Link to='/' className="h5 font-weight-bold mt-4 text-dark side-link"><i class="fas fa-shopping-cart"></i> History</Link>
+                            <Link to='/buy' className="h5 font-weight-bold my-4 text-dark"><i class="fas fa-suitcase"></i> Buy Coin</Link>
+                            <Link to='/sell' className="h5 font-weight-bold mb-4 text-dark"><i class="fas fa-comment-alt"></i> Sell Coin</Link>
                         </nav>
                     </div>
                     <div className="col-sm-10 p-0 p-md-5" style={{ backgroundColor: "#F4F7FC", borderRadius: '16px' }}>

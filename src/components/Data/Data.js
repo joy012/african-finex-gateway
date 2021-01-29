@@ -59,7 +59,7 @@ const Data = () => {
                                 <li class="list-group-item">IBAN: {data.IBAN}</li>
                                 <li class="list-group-item">Wallet: {data.wallet}</li>
                                 <li class="list-group-item">Coin: {data.coinQuantity} {data.country.currencies[0].code}</li>
-                                <li class="list-group-item">Sell Time: {data.timeStamp}</li>
+                                <li class="list-group-item">Sell Time: {data.timestamp}</li>
                             </ul>
                         </div>
                     </div>

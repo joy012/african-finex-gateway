@@ -25,16 +25,15 @@ const SellFifthPage = () => {
             .then(res => res.json())
             .then(result => {
                 if (result) {
-                    alert('Success!')
-                    history.push('/');
+                    alert('Success!');
+                    setCountry({});
+                    setQuantity(0);
+                    setWallet('');
+                    setIban('');
+                    setTXid('');
                 }
             })
-        setCountry({});
-        setQuantity(0);
-        setWallet('');
-        setIban('');
-        setTXid('');
-        history.push('/');
+        history.push('/')
     }
 
     return (

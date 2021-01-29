@@ -22,7 +22,7 @@ const BuyFrontPage = () => {
     const handleQuantity = event => {
         const amount = event.target.value;
         if (amount >= 0) {
-            setQuantity(amount - (amount * 0.01));
+            setQuantity((amount - (amount * 0.01)).toFixed(2));
         }
         else {
             alert("Invalid Coin Value.");
@@ -43,11 +43,11 @@ const BuyFrontPage = () => {
             <input onBlur={handleQuantity} className='form-control my-3 d-block mx-auto w-50' type="number" min='0' placeholder='Quantity' />
 
             <h5 className='my-4'>Total cost
-            <span className='h3 text-danger'> {quantity ? `${quantity}` : ''} {country.name ? `${country.currencies[0].code}` : ''}</span>
+            <span className='h3 text-danger'> {quantity ? `${(quantity / 0.99.toFixed(2))}` : ''} {country.name ? `${country.currencies[0].code}` : ''}</span>
             </h5>
 
             <h5>You Will Recieve
-            <span className='h3 text-success'> {quantity ? `${quantity - (quantity * 0.01)}` : ''} {country.name ? `T${country.currencies[0].code}` : ''}</span>
+            <span className='h3 text-success'> {quantity ? `${quantity}` : ''} {country.name ? `T${country.currencies[0].code}` : ''}</span>
             </h5>
 
             <small className='text-danger font-weight-bold'>1% cost deduct for Transaction</small>
