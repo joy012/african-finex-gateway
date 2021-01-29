@@ -43,8 +43,11 @@ const SellFrontPage = () => {
             <h5 className='mt-5 pt-5'>You Will Get 
             <span className='h3 text-success'> {quantity ? `${quantity}` : ''} {country.name ? `${country.currencies[0].code}` : ''} </span> 
             from 
-            <span className='h3 text-danger'> {quantity ? `${quantity / 0.99}` : ''} {country.name ? `T${country.currencies[0].code}` : ''}</span>
+            <span className='h3 my-3 text-danger'> {quantity ? `${quantity / 0.99}` : ''} {country.name ? `T${country.currencies[0].code}` : ''}</span>
             </h5>
+
+            <small className='text-danger font-weight-bold'>1% cost deduct for Transaction</small>
+
             <Link to='/sell-secondPage'>
                 <input className='btn px-5 d-block mx-auto my-5' type="submit" value='Sell Now' />
             </Link>

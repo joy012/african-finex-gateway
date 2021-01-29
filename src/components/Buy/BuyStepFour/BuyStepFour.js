@@ -7,12 +7,14 @@ var uniqid = require('uniqid');
 const BuyStepFour = () => {
     const [country,, quantity,, wallet,, iban] = useContext(UserContext);
     const history = useHistory();
+    const time = new Date().toLocalString();
     const data = {
         country: country,
         coinQuantity: quantity,
         wallet: wallet,
         IBAN: iban,
-        swapId: uniqid()
+        swapId: uniqid(),
+        timeStamp: time
     };
     const handleAddBuy = e => {
         e.preventDefault();

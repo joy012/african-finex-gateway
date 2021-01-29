@@ -33,9 +33,8 @@ const Data = () => {
                                 <li class="list-group-item">Swap ID: {data.swapId}</li>
                                 <li class="list-group-item">BANK: {data.IBAN}</li>
                                 <li class="list-group-item">Wallet: {data.wallet}</li>
-                                <li class="list-group-item">Country: {data.country.name}</li>
-                                <li class="list-group-item">Currency: {data.country.currencies[0].code}</li>
-                                <li class="list-group-item">Coin Quantity: {data.coinQuantity}</li>
+                                <li class="list-group-item">Coin: {data.coinQuantity} T{data.country.currencies[0].code}</li>
+                                <li class="list-group-item">Buy Time: {data.timeStamp}</li>
                             </ul>
                         </div>
                     </div>
@@ -59,9 +58,8 @@ const Data = () => {
                                 <li class="list-group-item">TXID: {data.TXid}</li>
                                 <li class="list-group-item">IBAN: {data.IBAN}</li>
                                 <li class="list-group-item">Wallet: {data.wallet}</li>
-                                <li class="list-group-item">Country: {data.country.name}</li>
-                                <li class="list-group-item">Currency: {data.country.currencies[0].code}</li>
-                                <li class="list-group-item">Coin Quantity: {data.coinQuantity}</li>
+                                <li class="list-group-item">Coin: {data.coinQuantity} {data.country.currencies[0].code}</li>
+                                <li class="list-group-item">Sell Time: {data.timeStamp}</li>
                             </ul>
                         </div>
                     </div>
