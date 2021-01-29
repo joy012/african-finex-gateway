@@ -5,7 +5,7 @@ var uniqid = require('uniqid');
 
 
 const BuyStepFour = () => {
-    const [, ,,,country,, quantity,, wallet,, iban] = useContext(UserContext);
+    const [country,, quantity,, wallet,, iban] = useContext(UserContext);
     const history = useHistory();
     const data = {
         country: country,
@@ -25,7 +25,7 @@ const BuyStepFour = () => {
             .then(res => res.json())
             .then(result => {
                 if (result) {
-                    history.push('/dashboard/buy-success');
+                    history.push('/buy-success');
                 }
             })
     }

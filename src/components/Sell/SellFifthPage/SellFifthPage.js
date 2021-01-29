@@ -4,7 +4,7 @@ import { UserContext } from '../../../App';
 
 
 const SellFifthPage = () => {
-    const [, , , ,country, , quantity, , wallet, , iban, , TXid] = useContext(UserContext);
+    const [country, , quantity, , wallet, , iban, , TXid] = useContext(UserContext);
     const history = useHistory();
     const data = {
         country: country,

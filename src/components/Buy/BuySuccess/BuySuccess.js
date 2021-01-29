@@ -4,7 +4,7 @@ import { UserContext } from '../../../App';
 import tick from '../../../image/tick.png';
 
 const BuySuccess = () => {
-    const [, , , ,country, setCoutnry, quantity,setQuantity, , setWallet] = useContext(UserContext);
+    const [country, setCoutnry, quantity,setQuantity, , setWallet] = useContext(UserContext);
     const currency = country.name ? `${country.currencies[0].symbol}` : 'currency';
   
     return (

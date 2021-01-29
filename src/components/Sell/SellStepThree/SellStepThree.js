@@ -4,7 +4,7 @@ import { UserContext } from '../../../App';
 
 
 const SellStepThree = () => {
-    const [, , , , , , , , , , , setIban] = useContext(UserContext);
+    const [, , , , , , , setIban] = useContext(UserContext);
 
     const handleChange = event => {
         setIban(event.target.value);
@@ -15,7 +15,7 @@ const SellStepThree = () => {
         <input onBlur={handleChange} type="text" className='form-control w-100' placeholder='Enter your IBAN account details to be credited'/>
       
       <Link><p className='text-center my-5 pt-5'>Where can I find my IBAN?</p></Link>
-        <Link to='/dashboard/sell-fourthPage'>
+        <Link to='/sell-fourthPage'>
             <input className='btn px-5 d-block mx-auto my-5' type="submit" value='Next' />
         </Link>
     </div>

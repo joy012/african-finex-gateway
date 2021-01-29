@@ -3,37 +3,24 @@ import React, { useEffect, useState } from 'react';
 const Data = () => {
     const [buy, setBuy] = useState([])
     const [sell, setSell] = useState([]);
-    const email = JSON.parse(sessionStorage.getItem('email'));
 
     useEffect(() => {
-        fetch('https://african-finex-gateway.herokuapp.com/buy?email=' + email, {
-            method: "GET",
-            headers: {
-                authorization: `Bearer ${sessionStorage.getItem('token')}`,
-                "Content-Type": "application/json"
-            }
-        })
+        fetch('https://african-finex-gateway.herokuapp.com/buy')
             .then(res => res.json())
             .then(data => setBuy(data))
-    }, [email])
+    }, [])
 
     useEffect(() => {
-        fetch('https://african-finex-gateway.herokuapp.com/sell?email=' + email, {
-            method: "GET",
-            headers: {
-                authorization: `Bearer ${sessionStorage.getItem('token')}`,
-                "Content-Type": "application/json"
-            }
-        })
+        fetch('https://african-finex-gateway.herokuapp.com/sell')
             .then(res => res.json())
             .then(data => setSell(data))
-    }, [email])
+    }, [])
 
     return (
         <>
             <div className='container'>
                 <h2 className='text-center my-5'>Buy History:</h2>
-                <div class="row justify-content-center align-items-center">
+                <div class="row align-items-center">
                     {
                         buy.map((data, index) =>
 

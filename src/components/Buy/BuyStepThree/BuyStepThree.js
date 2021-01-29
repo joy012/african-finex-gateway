@@ -4,7 +4,7 @@ import { UserContext } from '../../../App';
 
 
 const BuyStepThree = () => {
-    const [, , , ,country, , , , , , , setIban] = useContext(UserContext);
+    const [country, , , , , , , setIban] = useContext(UserContext);
     const handleChange = event => {
         setIban(event.target.value);
     }
@@ -25,7 +25,7 @@ const BuyStepThree = () => {
             <h6 className='my-4'>Transfer Between Banks are usually faster.If availabel give preferance to your local bank and the system will automatically find the best P2P for you.</h6>
 
             <Link><p className='text-center my-4 pt-5'>How lonk does it usually take?</p></Link>
-            <Link to='/dashboard/buy-finalPage'>
+            <Link to='/buy-finalPage'>
                 <input className='btn px-5 d-block mx-auto my-5' type="submit" value='Next' />
             </Link>
         </div>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { UserContext } from '../../../App';
 
 const SellFrontPage = () => {
-    const [, , , , country,setCountry,quantity ,setQuantity] = useContext(UserContext)
+    const [country,setCountry,quantity ,setQuantity] = useContext(UserContext)
     const [countryDetail, setCountryDetail] = useState([]);
 
     useEffect(() => {
@@ -34,7 +34,7 @@ const SellFrontPage = () => {
             </select>
             <input onBlur={handleQuantity} className='form-control my-3 w-50 d-block mx-auto' type="number" placeholder='Quantity' />
             <h5 className='mt-5 pt-5 text-success'>You Will Get {quantity? `${quantity - (quantity*.01)}`:''} {country.name? `${country.currencies[0].code}`: 'AOA'} from {quantity? `${quantity}`:''} {country.name? `T${country.currencies[0].code}`: 'TAOA'}</h5>
-            <Link to='/dashboard/sell-secondPage'>
+            <Link to='/sell-secondPage'>
                 <input className='btn px-5 d-block mx-auto my-5' type="submit" value='Sell Now' />
             </Link>
         </div>
