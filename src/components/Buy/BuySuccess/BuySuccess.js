@@ -21,10 +21,10 @@ const BuySuccess = () => {
                 <img className='w-50 d-block mx-auto' src={tick} alt="" />
             </div>
             <Link to='/sell'>
-                <button onClick={() => reset()} className='btn d-inline-block mx-5'>Sell Coin</button>
+                <button onClick={reset} className='btn d-inline-block mx-5'>Sell Coin</button>
             </Link>
             <Link to='/'>
-                <button onclick={() => reset()} className='btn d-inline-block'>History</button>
+                <button onClick={reset} className='btn d-inline-block'>History</button>
             </Link>
         </div>
     );
